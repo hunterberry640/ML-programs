@@ -4,9 +4,9 @@ fun memberSet ([], _) = false
         if head = element then true
         else memberSet (tail, element);
 
-fun consUnion ([], set2) = set2
-|   consUnion (set1, []) = set1
-|   consUnion (set1, set2) =
+fun setUnion ([], set2) = set2
+|   setUnion (set1, []) = set1
+|   setUnion (set1, set2) =
         let
             fun unionHelper ([], [], union) = union
             |   unionHelper ([], head::tail, union) =
@@ -18,4 +18,3 @@ fun consUnion ([], set2) = set2
         end;
 
 
-consUnion([1, 2, 3], [3, 1, 5, 9]);
